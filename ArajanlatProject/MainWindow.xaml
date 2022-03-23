@@ -6,7 +6,53 @@
         xmlns:local="clr-namespace:ArajanlatProject"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <StackPanel>
+        
+        <StackPanel Orientation="Horizontal" Margin="5 20">
 
-    </Grid>
+            <StackPanel Orientation="Vertical" Margin="10">
+                <Label>Szolgáltatás:</Label>
+                <ComboBox x:Name="cbTaskName" Height="20" Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="10">
+                <Label>Mennyiség:</Label>
+                <TextBox x:Name="tbAmount" Height="20" MinWidth="10" MaxWidth="50"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <Button x:Name="btnAdd" Content="Hozzáadás" Height="20" Width="75" Margin="10 10 20 10"/>
+                <Button x:Name="btnDelete" Content="Törlés" Height="20" Width="75" Margin="10 0 20 0"/>
+
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="5 0">
+
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="5 20 5 0">
+            <Label>Felvett szolgáltatások:</Label>
+        </StackPanel>
+
+        <DataGrid ColumnWidth="*"
+                  AutoGenerateColumns="False"
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Szolgáltatás megnevezése"/>
+                <DataGridTextColumn Header="Egységár"/>
+                <DataGridCheckBoxColumn Header="Mennyiség"/>
+                <DataGridTextColumn Header="Összeg"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+
+
+    </StackPanel>
 </Window>
